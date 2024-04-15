@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+    .fund_body {
+        @apply flex w-1/2 flex-col justify-center h-auto;
+    }
+
+    .gradient_corner {
+        background: linear-gradient(92.12deg, #57b5f9 0%, #da11ba 100%);
+    }
+
+    .jar_label {
+        font-size: 10px;
+        @apply absolute font-[800] text-label whitespace-nowrap;
+    }
+
+    .label-empty {
+        @apply text-empty opacity-[.4]
+    }
+
+    .label-incorrect {
+        @apply text-incorrect opacity-[.5]
+    }
+
+    .field {
+        @apply max-w-[340px] h-[56px] ml-auto mr-auto mb-[16px] border-solid border-corner rounded-[16px] pl-[16px] pr-[16px]
+    }
+
+    .label {
+        @apply cursor-default text-left text-label text-[16px] relative top-[-38px] transition-all duration-100 ease-linear
+    }
+
+    .input-hidden + .label {
+        @apply text-[12px] top-[-52px]
+    }
+
+    .borderline {
+        @apply w-[1px] bg-borderline opacity-20 h-[35px] -left-[16px] -top-1/2 self-center inline-block relative
+    }
+
+    .splitterLine {
+        @apply flex-grow border-t bg-borderline h-[.5px] opacity-20
+    }
+}
+
+* {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+html {
+    overflow-y: hidden;
+}
+
+body {
+    background: linear-gradient(136.56deg, #8a53b6 0%, #cea2d0 97.42%) no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter";
+}
+
+/* For a prompt in the input fields */
+.field input.inputF:hover, .field textarea:hover {
+    outline: none;
+}
+
+.field input.inputF:hover + label,
+.field textarea:hover + label,
+.field input.inputF:active + label,
+.field textarea:active + label,
+.field input.inputF.active + label,
+.field textarea.active + label,
+.field input.inputF:focus + label,
+.field textarea:focus + label {
+    font-size: 12px;
+    top: -52px
+}
+
+.field label:hover,
+.field label:active,
+.field label.active,
+.field label:focus {
+    font-size: 12px;
+    top: -52px
+}
+
+input:focus,select:focus,textarea:focus,button:focus {
+    outline: none
+}
+
+.field:focus-within {
+    box-shadow: 0 0 0 2px #000
+}
+
+.field input.inputF {
+    text-transform: none;
+    background: none;
+    text-align: left;
+    border: 0;
+    color: #000;
+    height: 41px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 0;
+    margin-top: 12px;
+    box-sizing: border-box;
+    padding: 0;
+}
